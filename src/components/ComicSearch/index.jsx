@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { Button } from "../Button";
-import { api, md5Hash, publicKey, timeStamp } from "../../services/api";
+import getComicList from "../../utils/getComicList";
 
 export function ComicSearch() {
   const [input, setInput] = useState("");
@@ -11,18 +11,13 @@ export function ComicSearch() {
 
   async function fetchComicList() {
     setIsLoading(true);
-    let res;
+    
     if (input) {
-      res = await api.get(
-        `/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${md5Hash}&orderBy=title&titleStartsWith=${input}&offset=20`
-      );
+      await getComicList(setComicList, `&titleStartsWith=${input}`);
     } else {
-      res = await api.get(
-        `/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${md5Hash}&orderBy=title&limit=30`
-      );
+     await getComicList(setComicList);
     }
     setIsLoading(false);
-    setComicList(res.data.data);
   }
 
   return (

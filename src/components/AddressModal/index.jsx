@@ -10,7 +10,8 @@ const DefaultLocation = { lat: -7.344868868143532, lng: -39.230212787016974 };
 const DefaultZoom = 10;
 
 export function AddressModal() {
-  const { handleChangeShowMapModal } = useContext(GlobalContext);
+  const { handleChangeShowMapModal, changeAddress } =
+    useContext(GlobalContext);
 
   const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
 
@@ -34,7 +35,6 @@ export function AddressModal() {
       <div>
         <MapPicker
           defaultLocation={defaultLocation}
-          className={styles.map}
           zoom={zoom}
           style={{ height: "25rem" }}
           onChangeLocation={handleChangeLocation}
@@ -59,7 +59,11 @@ export function AddressModal() {
             Reset Location
           </button>
         </div>
-        <Button>Save Address</Button>
+        <Button onClick={() => {
+          alert('address has been selected!')
+          changeAddress(location)
+          return handleChangeShowMapModal()
+        }}>Save Address</Button>
       </div>
     </Modal>
   );

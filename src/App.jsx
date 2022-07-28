@@ -6,7 +6,7 @@ import { Header } from "./components/Header";
 import { Loading } from "./components/Loading";
 import { Modal } from "./components/Modal";
 import { GlobalContext } from "./contexts/GlobalContext";
-import { api, md5Hash, publicKey, timeStamp } from "./services/api";
+import getComicList from "./utils/getComicList";
 
 function App() {
   const [comicList, setComicList] = useState(null);
@@ -14,10 +14,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [showMapModal, setShowMapModal] = useState(false);
   const [showComicModal, setShowComicModal] = useState(false);
+  const [address, setAddress] = useState(null);
 
   function handleSetModalComic(comic) {
     if (comic) {
-      setShowComicModal(true)
+      setShowComicModal(true);
     }
     setModalComic(comic);
   }
@@ -30,14 +31,15 @@ function App() {
     setShowMapModal((value) => !value);
   }
 
+  function changeAddress(address) {
+    setAddress(address);
+  }
+
   useEffect(() => {
     async function fetchComicList() {
       setIsLoading(true);
-      const res = await api.get(
-        `/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${md5Hash}&orderBy=title&limit=30`
-      );
+      await getComicList(setComicList);
       setIsLoading(false);
-      setComicList(res.data.data);
     }
 
     fetchComicList();
@@ -47,9 +49,11 @@ function App() {
     <GlobalContext.Provider
       value={{
         isLoading,
+        setIsLoading,
         comicList,
         modalComic,
-        setIsLoading,
+        address,
+        changeAddress,
         setComicList,
         handleSetModalComic,
         handleChangeShowComicModal,

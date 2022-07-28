@@ -5,8 +5,12 @@ import { Button } from "../Button";
 import { Modal } from "../Modal";
 
 export function ComicModal() {
-  const { modalComic, handleChangeShowComicModal } =
-    useContext(GlobalContext);
+  const {
+    modalComic,
+    handleChangeShowComicModal,
+    address,
+    handleChangeShowMapModal,
+  } = useContext(GlobalContext);
 
   return (
     <Modal changeModalVisible={handleChangeShowComicModal}>
@@ -33,7 +37,23 @@ export function ComicModal() {
           </a>
         ))}
 
-        <Button className={styles.button}>Send to my address</Button>
+        <Button
+          className={styles.button}
+          onClick={() => {
+            if (!address) {
+              alert('ADDRESS NOT SELECTED!\nPlease select and try again.')
+              return handleChangeShowMapModal()
+            }
+
+            alert(
+              `The comic ${modalComic?.title} will be send to ${JSON.stringify(
+                address
+              )}`
+              )}
+          }
+        >
+          Send to my address
+        </Button>
       </div>
     </Modal>
   );

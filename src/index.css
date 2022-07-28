@@ -29,14 +29,14 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 8px;               
 }
 body::-webkit-scrollbar-track {
-  background: #2225;        /* color of the tracking area */
+  background: #2225;       
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #da1212;    /* color of the scroll thumb */
-  border-radius: 20px;      /* roundness of the scroll thumb */  /* creates padding around scroll thumb */
+  background-color: #da1212;  
+  border-radius: 20px; 
 }
 
 .App {

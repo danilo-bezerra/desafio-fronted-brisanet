@@ -43,8 +43,15 @@
 }
 
 .modal::-webkit-scrollbar {
-  display: none;
-}
+    width: .125rem; 
+  }
+  .modal::-webkit-scrollbar-track {
+    background: #2225; 
+  }
+  .modal::-webkit-scrollbar-thumb {
+    background-color: #da1212; 
+    border-radius: 20px; 
+  }
 
 .modal > div {
   flex: 1;
@@ -60,18 +67,6 @@
   .modal {
     flex-direction: column;
     margin: 1rem;
-  }
-
-  .modal::-webkit-scrollbar {
-    display: initial;
-    width: .125rem; 
-  }
-  .modal::-webkit-scrollbar-track {
-    background: #2225; 
-  }
-  .modal::-webkit-scrollbar-thumb {
-    background-color: #da1212; 
-    border-radius: 20px; 
   }
 
   .btnClose {
