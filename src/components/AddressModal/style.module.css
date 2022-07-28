@@ -1,0 +1,10 @@
+.textContainer {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.secondaryButton {
+  display: block;
+  background-color: transparent  ;
+  text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+.item {
+  background-color: #222;
+  transition: .2s all;
+  border-radius: .25rem;
+  overflow: hidden;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.title {
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.banner {
+  width: 100%;
+  aspect-ratio: 633 / 1024;
+}

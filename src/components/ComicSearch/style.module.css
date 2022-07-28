@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  max-width: 368px;
+  margin-left: auto;
+  justify-content: flex-end;
+  gap: .5rem;
+  padding: 1rem 0;
+  padding-right: 1rem;
+}
+
+.container input {
+  flex: 1;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #da121299;
+  transition: .2s all;
+}
+
+.container input:focus {
+   border: 1px solid #da1212;
+}
