@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
-import { ComicContext } from "../../contexts/ComicContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import { Button } from "../Button";
 import { api, md5Hash, publicKey, timeStamp } from "../../services/api";
 
 export function ComicSearch() {
   const [input, setInput] = useState("");
 
-  const { setComicList, setIsLoading } = useContext(ComicContext);
+  const { setComicList, setIsLoading } = useContext(GlobalContext);
 
   async function fetchComicList() {
     setIsLoading(true);

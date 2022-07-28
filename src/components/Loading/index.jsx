@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './style.module.css'
-import Logo from '../../assets/logo-marvel.png'
 
-export function Loading({comic}) {
-  console.log(comic)
+export function Loading() {
 
   return (
     <div className={styles.container}>

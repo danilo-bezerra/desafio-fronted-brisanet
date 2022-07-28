@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import styles from "./style.module.css";
 import Logo from "../../assets/logo-marvel.png";
 import { ComicItem } from "../ComicItem";
-import { ComicContext } from "../../contexts/ComicContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import { Loading } from "../Loading";
 import { ComicSearch } from "../ComicSearch";
 
 export function ComicList() {
-  const { comicList, isLoading } = useContext(ComicContext);
+  const { comicList, isLoading } = useContext(GlobalContext);
 
   return (
     <>

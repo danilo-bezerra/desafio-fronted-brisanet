@@ -28,6 +28,17 @@ body {
   min-height: 100vh;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #2225;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #da1212;    /* color of the scroll thumb */
+  border-radius: 20px;      /* roundness of the scroll thumb */  /* creates padding around scroll thumb */
+}
+
 .App {
   max-width: 1200px;
   margin: auto;

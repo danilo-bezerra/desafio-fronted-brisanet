@@ -7,7 +7,7 @@ export function Header({ changeShowMapModal }) {
   return (
     <header className={styles.header}>
       <img src={Logo} alt="" className={styles.logo} />
-      <Button onClick={changeShowMapModal}>Select Delivery Address</Button>
+      <Button onClick={changeShowMapModal}>Select Address</Button>
     </header>
   );
 }

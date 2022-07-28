@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
-import { ComicContext } from "../../contexts/ComicContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import { Button } from "../Button";
 import { Modal } from "../Modal";
 
@@ -10,7 +10,7 @@ const DefaultLocation = { lat: -7.344868868143532, lng: -39.230212787016974 };
 const DefaultZoom = 10;
 
 export function AddressModal() {
-  const { handleChangeShowMapModal } = useContext(ComicContext);
+  const { handleChangeShowMapModal } = useContext(GlobalContext);
 
   const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
 
@@ -36,7 +36,7 @@ export function AddressModal() {
           defaultLocation={defaultLocation}
           className={styles.map}
           zoom={zoom}
-          style={{ height: "100%" }}
+          style={{ height: "25rem" }}
           onChangeLocation={handleChangeLocation}
           onChangeZoom={handleChangeZoom}
           apiKey="AIzaSyAkBhTU6Tc8FNdu64ZRG4rPm2bin7H7OOI"

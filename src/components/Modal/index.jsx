@@ -6,10 +6,12 @@ export function Modal({changeModalVisible, children}) {
 
   return (
     <div className={styles.containerModal}>
-      <Button className={styles.btnClose} onClick={changeModalVisible}>
-        X
-      </Button>
-      <section className={styles.modal}>{children}</section>
+      <section className={styles.modal}>
+        <Button className={styles.btnClose} onClick={changeModalVisible}>
+          X
+        </Button>
+        {children}
+      </section>
     </div>
   );
 }

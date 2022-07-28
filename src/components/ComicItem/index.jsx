@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import styles from './style.module.css'
 import Logo from '../../assets/logo-marvel.png'
-import { ComicContext } from '../../contexts/ComicContext';
+import { GlobalContext } from '../../contexts/GlobalContext';
 
 export function ComicItem({comic}) {
-  const { handleSetModalComic } = useContext(ComicContext);
+  const { handleSetModalComic } = useContext(GlobalContext);
 
   return (
     <li className={styles.item}>

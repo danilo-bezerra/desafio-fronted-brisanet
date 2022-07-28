@@ -4,8 +4,7 @@
   margin-left: auto;
   justify-content: flex-end;
   gap: .5rem;
-  padding: 1rem 0;
-  padding-right: 1rem;
+  padding: 1rem;
 }
 
 .container input {

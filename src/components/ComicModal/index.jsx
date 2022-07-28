@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
 import styles from "./style.module.css";
-import { ComicContext } from "../../contexts/ComicContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import { Button } from "../Button";
 import { Modal } from "../Modal";
 
 export function ComicModal() {
   const { modalComic, handleChangeShowComicModal } =
-    useContext(ComicContext);
+    useContext(GlobalContext);
 
   return (
     <Modal changeModalVisible={handleChangeShowComicModal}>
-      <div>
+      <div className={styles.box}>
         <img src={modalComic?.thumbnail?.path + ".jpg"} alt="" />
       </div>
-      <div>
+      <div className={styles.box}>
         <h3 className={styles.title}>{modalComic?.title}</h3>
         <h4 className={styles.sectionTitle}>Prices</h4>
         {modalComic?.prices.map(({ type, price }) => (

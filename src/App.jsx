@@ -5,7 +5,7 @@ import { ComicModal } from "./components/ComicModal";
 import { Header } from "./components/Header";
 import { Loading } from "./components/Loading";
 import { Modal } from "./components/Modal";
-import { ComicContext } from "./contexts/ComicContext";
+import { GlobalContext } from "./contexts/GlobalContext";
 import { api, md5Hash, publicKey, timeStamp } from "./services/api";
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <ComicContext.Provider
+    <GlobalContext.Provider
       value={{
         isLoading,
         comicList,
@@ -65,7 +65,7 @@ function App() {
           <AddressModal changeModalVisible={handleChangeShowMapModal} />
         )}
       </section>
-    </ComicContext.Provider>
+    </GlobalContext.Provider>
   );
 }
 
